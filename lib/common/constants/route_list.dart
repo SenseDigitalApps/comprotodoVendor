@@ -22,6 +22,9 @@ class RouteList {
   static const String deleteAccount = 'delete-account';
   static const String biometrics = 'biometrics';
 
+  //Store Setup
+  static const String welcomeStoreSetup = 'welcomeStoreSetup';
+
   // Blog
   static const String blog = 'blog';
   static const String listBlog = 'list-blog';

@@ -9561,6 +9561,16 @@ class S {
     );
   }
 
+  /// `Shop name`
+  String get addressLine1 {
+    return Intl.message(
+      'Shop name',
+      name: 'addressLine1',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Sorry, we couldn't find any results.`
   String get notFindResult {
     return Intl.message(
