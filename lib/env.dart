@@ -45,7 +45,7 @@ Map<String, dynamic> environment = {
   },
   "appRatingConfig": {
     'showOnOpen': false,
-    'android': 'com.inspireui.fluxstore',
+    'android': 'com.sensedigital.compratodovendedor',
     'ios': '1469772800',
     'minDays': 7,
     'minLaunches': 10,
@@ -538,7 +538,7 @@ Map<String, dynamic> environment = {
     //The link your app will open
     "link": "https://mstore.io/",
     //----------* Android Setting *----------//
-    "androidPackageName": "com.inspireui.fluxstore",
+    "androidPackageName": "com.sensedigital.compratodovendedor",
     "androidAppMinimumVersion": 1,
     //----------* iOS Setting *----------//
     "iOSBundleId": "com.inspireui.mstore.flutter",
@@ -1112,12 +1112,12 @@ Map<String, dynamic> environment = {
     },
     "applePayConfig": {
       "enable": true,
-      "merchantId": "merchant.com.inspireui.fluxstore",
+      "merchantId": "merchant.com.sensedigital.compratodovendedor",
     },
     "googlePayConfig": {
       "enable": true,
       "stripePublishableKey": "pk_test_O3awus9i5mA2wIX9a7pU3MSi00gZPcpJWX",
-      "merchantId": "merchant.com.inspireui.fluxstore"
+      "merchantId": "merchant.com.sensedigital.compratodovendedor"
     },
   },
   "stripeConfig": {
@@ -1147,7 +1147,7 @@ Map<String, dynamic> environment = {
     "secret":
         "ECbFREri7NFj64FI_9WzS6A0Az2DqNLrVokBo0ZBu4enHZKMKOvX45v9Y1NBPKFr6QJv2KaSp5vk5A1G",
     "returnUrl":
-        "com.inspireui.fluxstore://paypalpay", // Example: "your.android.package.name:://paypalpay"
+        "com.sensedigital.compratodovendedor://paypalpay", // Example: "your.android.package.name:://paypalpay"
     "production": false,
     "paymentMethodId": "paypal", //ppcp-gateway
     "enabled": true,
@@ -1217,11 +1217,11 @@ Map<String, dynamic> environment = {
   },
   "inAppPurchaseConfig": {
     'consumableProductIDs': [
-      'com.inspireui.fluxstore.test',
+      'com.sensedigital.compratodovendedor.test',
     ],
     'nonConsumableProductIDs': [],
     'subscriptionProductIDs': [
-      'com.inspireui.fluxstore.subscription.test',
+      'com.sensedigital.compratodovendedor.subscription.test',
     ],
     "enabled": false
   },
@@ -1625,7 +1625,6 @@ Map<String, dynamic> environment = {
     ///  Type should be: 'fade-in', 'zoom-in', 'zoom-out', 'top-down', 'rive', 'flare', ''static'
     "type": "flare",
     "image": "assets/images/splashscreen.flr",
-
 
     /// AnimationName's is used for 'rive' and 'flare' type
     "animationName": "fluxstore",

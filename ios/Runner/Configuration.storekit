@@ -15,7 +15,7 @@
           "locale" : "en_US"
         }
       ],
-      "productID" : "com.inspireui.fluxstore.test",
+      "productID" : "com.sensedigital.compratodovendedor.test",
       "referenceName" : "Test",
       "type" : "Consumable"
     }
