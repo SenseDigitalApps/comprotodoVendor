@@ -201,14 +201,12 @@ class _Step4CustomerSupportScreenState
 
                       setState(() => isLoading = false);
                       if (result) {
-                        await Navigator.pushAndRemoveUntil(
+                        await Navigator.push(
                           context,
                           CupertinoPageRoute(
                             builder: (context) =>
                                 const Step7FinishingStepScreen(),
                           ),
-                          (Route<dynamic> route) =>
-                              false, // Elimina todas las rutas anteriores
                         );
                       }
                     }

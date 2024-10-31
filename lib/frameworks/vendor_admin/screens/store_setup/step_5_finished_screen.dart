@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:fstore/common/error_codes/error_codes.dart';
+import 'package:fstore/frameworks/vendor_admin/vendor_admin_app.dart';
 import 'package:provider/provider.dart';
 
 import '../login_screen/login_screen.dart';
@@ -62,14 +63,16 @@ class _Step7FinishingStepScreenState extends State<Step7FinishingStepScreen> {
             ElevatedButton(
               onPressed: () async {
                 _showMessage('Por favor inicia sesión con tus credenciales');
-                await Navigator.pushAndRemoveUntil(
-                  context,
-                  CupertinoPageRoute(
-                    builder: (context) => VendorAdminLoginScreen(),
-                  ),
-                  (Route<dynamic> route) =>
-                      false, // Elimina todas las rutas anteriores
-                );
+
+                Navigator.popUntil(context, (route) => route.isFirst);
+                // await Navigator.pushAndRemoveUntil(
+                //   context,
+                //   CupertinoPageRoute(
+                //     builder: (context) => const VendorAdminApp(),
+                //   ),
+                //   (Route<dynamic> route) =>
+                //       false, // Elimina todas las rutas anteriores
+                // );
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: Theme.of(context).primaryColor,

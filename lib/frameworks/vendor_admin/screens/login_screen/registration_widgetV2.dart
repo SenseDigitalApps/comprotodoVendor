@@ -209,7 +209,7 @@ class _RegistrationWidgetV2State extends State<RegistrationWidgetV2> {
     );
 
     registrationProvider.updateData(data);
-
+    widget.callBack();
     // Navegar a la siguiente pantalla
     await Navigator.push(
       context,
