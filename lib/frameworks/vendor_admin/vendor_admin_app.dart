@@ -23,6 +23,7 @@ import 'config/theme.dart';
 import 'models/export.dart';
 import 'screens/login_screen/login_screen.dart';
 import 'screens/screen_index.dart';
+import 'screens/store_setup/store_setup_model.dart';
 import 'services/vendor_admin.dart';
 
 class VendorAdminApp extends StatefulWidget {
@@ -97,6 +98,9 @@ class _VendorAdminAppState extends State<VendorAdminApp> {
           ),
           ChangeNotifierProvider<VendorAdminCategoryModel>(
             create: (_) => VendorAdminCategoryModel(),
+          ),
+          ChangeNotifierProvider<StoreSetupProvider>(
+            create: (_) => StoreSetupProvider(),
           ),
         ],
         child: Consumer2<AppModel, VendorAdminCategoryModel>(

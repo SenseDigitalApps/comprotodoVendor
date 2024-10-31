@@ -25,6 +25,7 @@ import '../../../models/index.dart'
 import '../../../services/service_config.dart';
 import '../../woocommerce/services/woo_commerce.dart';
 import '../entities/store_settings.dart';
+import '../screens/store_setup/data/registration_data.dart';
 
 class VendorAdminService extends WooCommerceService {
   final String _platform;
@@ -475,6 +476,42 @@ class VendorAdminService extends WooCommerceService {
           '$domain/wp-json/api/flutter_user/sign_up/?insecure=cool&$isSecure'
               .toUri()!,
           body: convert.jsonEncode(data),
+          headers: {'Content-Type': 'application/json'});
+
+      final body = convert.jsonDecode(response.body);
+      if (response.statusCode == 200 && body['message'] == null) {
+        var cookie = body['cookie'];
+        return await getUserInfo(cookie);
+      }
+      if (body is Map && isNotBlank(body['message'])) {
+        if (body['code'] == 'invalid_username') {
+          throw Exception(S.current.usernameInvalid);
+        }
+        if (body['code'] == 'existed_username') {
+          throw Exception(S.current.usernameAlreadyInUse);
+        }
+        if (body['code'] == 'invalid_email') {
+          throw Exception(S.current.emailAddressInvalid);
+        }
+        if (body['code'] == 'existed_email') {
+          throw Exception(S.current.emailAlreadyInUse);
+        }
+        throw Exception(body['message']);
+      }
+    } catch (err) {
+      printLog(err);
+      rethrow;
+    }
+    return null;
+  }
+
+  @override
+  Future<User?> createUserVendor(RegistrationModel registrationData) async {
+    try {
+      final response = await httpPost(
+          '$domain/wp-json/api/flutter_user/sign_up/?insecure=cool&$isSecure'
+              .toUri()!,
+          body: registrationData.toJsonRegisterVendor(),
           headers: {'Content-Type': 'application/json'});
 
       final body = convert.jsonDecode(response.body);

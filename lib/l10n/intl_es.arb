@@ -1088,4 +1088,6 @@
 	"multipleSellersDetected": "Se detectaron varios vendedores",
 	"multipleSellersDetectedAndDisableMultiVendorCheckoutContent": "Estás intentando agregar un producto de un nuevo vendedor a tu carrito. Ten en cuenta que solo puedes comprarle a un vendedor a la vez.",
 	"multipleSellersDetectedAndEnableMultiVendorCheckoutContent": "Estás intentando añadir un producto de un nuevo vendedor a tu carrito. ¿Quieres continuar?"
+	"addressLine1": "Dirección, línea 1",
+	"addressLine2Optional": "Dirección, línea 2 (Opcional)",
 }

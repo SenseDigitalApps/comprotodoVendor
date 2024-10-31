@@ -10,6 +10,7 @@ import '../../../common/tools.dart';
 import '../../../data/boxes.dart';
 import '../../../models/entities/user.dart';
 import '../../../services/index.dart';
+import '../screens/store_setup/data/registration_data.dart';
 import '../services/vendor_admin.dart';
 
 enum VendorAdminAuthenticationModelState {
@@ -285,6 +286,31 @@ class VendorAdminAuthenticationModel extends ChangeNotifier {
       showMessage(ErrorType.registerSuccess);
       await Future.delayed(const Duration(seconds: 1));
       _updateState(VendorAdminAuthenticationModelState.registered);
+    } catch (err) {
+      printLog(err);
+      showMessage(null, message: err.toString().clearExceptionKey());
+      _updateState(VendorAdminAuthenticationModelState.notLogin);
+    }
+  }
+
+  Future<void> registerUserVendor(
+      Function(ErrorType?, {String? message}) showMessage,
+      RegistrationModel registrationData) async {
+    _updateState(VendorAdminAuthenticationModelState.loading);
+    try {
+      user = await _services.createUserVendor(registrationData);
+      if (user == null) {
+        showMessage(ErrorType.registerFailed);
+        _updateState(VendorAdminAuthenticationModelState.notLogin);
+        return;
+      }
+      // Services()
+      //     .firebase
+      //     .loginFirebaseEmail(email: username, password: password);
+      // saveLocalUser();
+      // showMessage(ErrorType.registerSuccess);
+      // await Future.delayed(const Duration(seconds: 1));
+      // _updateState(VendorAdminAuthenticationModelState.registered);
     } catch (err) {
       printLog(err);
       showMessage(null, message: err.toString().clearExceptionKey());

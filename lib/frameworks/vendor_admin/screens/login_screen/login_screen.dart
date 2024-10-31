@@ -5,6 +5,7 @@ import '../../../../common/error_codes/error_codes.dart';
 import '../../models/export.dart';
 import 'login_widget.dart';
 import 'registration_widget.dart';
+import 'registration_widgetV2.dart';
 
 class VendorAdminLoginScreen extends StatefulWidget {
   @override
@@ -40,7 +41,7 @@ class _VendorAdminLoginScreenState extends State<VendorAdminLoginScreen> {
               children: [
                 LoginWidget(
                     callBack: () => _goToPage(1), onMessage: _showMessage),
-                RegistrationWidget(
+                RegistrationWidgetV2(
                     callBack: () => _goToPage(0), onMessage: _showMessage),
               ],
             ),

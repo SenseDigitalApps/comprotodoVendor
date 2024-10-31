@@ -17,6 +17,7 @@ import 'common/constants.dart';
 import 'common/events.dart';
 import 'common/theme/index.dart';
 import 'common/tools.dart';
+import 'frameworks/vendor_admin/screens/store_setup/store_setup_model.dart';
 import 'generated/l10n.dart';
 import 'generated/languages/index.dart';
 import 'generated/overrides/app_localizations.dart';
